@@ -1,10 +1,13 @@
+// Global stlyes
+import GlobalStyles from "./components/GlobalStyles";
+
 // Import pages
 import AboutUs from "./pages/AboutUs";
 
 function App() {
     return (
         <div className="App">
-            <h1>Hello</h1>
+            <GlobalStyles />
             <AboutUs />
         </div>
     );

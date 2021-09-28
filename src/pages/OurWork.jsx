@@ -1,14 +1,23 @@
-// Images
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { MovieState } from "../moviesState";
 
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animations";
+
 const OurWork = () => {
   const [movies] = useState(MovieState);
 
   return (
-    <Work>
+    <Work
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      style={{ background: "#ffffff" }}
+    >
       {movies &&
         movies.map((movie) => (
           <Movie key={movie.url}>
@@ -25,19 +34,18 @@ const OurWork = () => {
   );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
   min-height: 100vh;
   overflow: hidden;
   padding: 5rem 10rem;
 
   h2 {
     padding: 1rem 0;
-    color: #ffffff;
   }
 `;
 
 const Movie = styled.div`
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
 
   .line {
     height: 0.5rem;

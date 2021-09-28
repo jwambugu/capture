@@ -1,11 +1,11 @@
 // Images
-import styled from "styled-components"
-import {Link} from "react-router-dom"
-import {useState} from "react"
-import {MovieState} from "../moviesState"
+import styled from "styled-components";
+import {Link} from "react-router-dom";
+import {useState} from "react";
+import {MovieState} from "../moviesState";
 
 const OurWork = () => {
-  const [movies] = useState(MovieState)
+  const [movies] = useState(MovieState);
   
   return (
       <Work>
@@ -22,8 +22,8 @@ const OurWork = () => {
             </Movie>
         ))}
       </Work>
-  )
-}
+  );
+};
 
 const Work = styled.div`
   min-height: 100vh;
@@ -34,7 +34,7 @@ const Work = styled.div`
     padding: 1rem 0;
     color: #ffffff;
   }
-`
+`;
 
 const Movie = styled.div`
   padding-bottom: 10rem;
@@ -50,6 +50,6 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
-`
+`;
 
 export default OurWork;

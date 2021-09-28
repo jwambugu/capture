@@ -1,43 +1,26 @@
 // Images
-import athlete from "../assets/images/athlete-small.png";
-import theRacer from "../assets/images/theracer-small.png";
-import goodTimes from "../assets/images/goodtimes-small.png";
-
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { MovieState } from "../moviesState";
 
 const OurWork = () => {
+  const [movies] = useState(MovieState);
+
   return (
     <Work>
-      <Movie>
-        <h2>The Athlete</h2>
+      {movies &&
+        movies.map((movie) => (
+          <Movie key={movie.url}>
+            <h2>{movie.title}</h2>
 
-        <div className="line" />
+            <div className="line" />
 
-        <Link>
-          <img src={athlete} alt="The athlete" />
-        </Link>
-      </Movie>
-
-      <Movie>
-        <h2>The Racer</h2>
-
-        <div className="line" />
-
-        <Link>
-          <img src={theRacer} alt="The racer" />
-        </Link>
-      </Movie>
-
-      <Movie>
-        <h2>The Racer</h2>
-
-        <div className="line" />
-
-        <Link>
-          <img src={goodTimes} alt="Good times" />
-        </Link>
-      </Movie>
+            <Link to={movie.url}>
+              <img src={movie.mainImg} alt={movie.title} />
+            </Link>
+          </Movie>
+        ))}
     </Work>
   );
 };

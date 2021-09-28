@@ -1,7 +1,12 @@
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { MovieState } from "../moviesState";
+
 import styled from "styled-components";
+
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animations";
 
 const MovieDetails = () => {
   const { location } = useHistory();
@@ -19,7 +24,12 @@ const MovieDetails = () => {
   return (
     <>
       {movie && (
-        <Details>
+        <Details
+          variants={pageAnimation}
+          initial="hidden"
+          animate="show"
+          exit="exit"
+        >
           <HeadLine>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt={movie.title} />
@@ -40,7 +50,7 @@ const MovieDetails = () => {
   );
 };
 
-const Details = styled.div`
+const Details = styled(motion.div)`
   color: white;
 `;
 

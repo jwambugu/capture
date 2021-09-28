@@ -8,6 +8,8 @@ import { About, Description, Hide, Image } from "../styles";
 import { motion } from "framer-motion";
 import { fade, photoAnimation, titleAnimation } from "../animations";
 
+import Wave from "./Wave";
+
 const AboutSection = () => {
   return (
     <About>
@@ -43,6 +45,8 @@ const AboutSection = () => {
           alt="guy with a camera"
         />
       </Image>
+
+      <Wave />
     </About>
   );
 };

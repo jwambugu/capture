@@ -1,72 +1,55 @@
 // Images
-import athlete from "../assets/images/athlete-small.png";
-import theRacer from "../assets/images/theracer-small.png";
-import goodTimes from "../assets/images/goodtimes-small.png";
-
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from "styled-components"
+import {Link} from "react-router-dom"
+import {useState} from "react"
+import {MovieState} from "../moviesState"
 
 const OurWork = () => {
-  return (
-    <Work>
-      <Movie>
-        <h2>The Athlete</h2>
+    const [movies] = useState(MovieState)
 
-        <div className="line" />
+    return (
+        <Work>
+            {movies &&
+            movies.map((movie) => (
+                <Movie key={movie.url}>
+                    <h2>{movie.title}</h2>
 
-        <Link>
-          <img src={athlete} alt="The athlete" />
-        </Link>
-      </Movie>
+                    <div className="line"/>
 
-      <Movie>
-        <h2>The Racer</h2>
-
-        <div className="line" />
-
-        <Link>
-          <img src={theRacer} alt="The racer" />
-        </Link>
-      </Movie>
-
-      <Movie>
-        <h2>The Racer</h2>
-
-        <div className="line" />
-
-        <Link>
-          <img src={goodTimes} alt="Good times" />
-        </Link>
-      </Movie>
-    </Work>
-  );
-};
+                    <Link to={movie.url}>
+                        <img src={movie.mainImg} alt={movie.title}/>
+                    </Link>
+                </Movie>
+            ))}
+        </Work>
+    )
+}
 
 const Work = styled.div`
-  min-height: 100vh;
-  overflow: hidden;
-  padding: 5rem 10rem;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 5rem 10rem;
 
-  h2 {
-    padding: 1rem 0;
-    color: #ffffff;
-  }
-`;
+    h2 {
+        padding: 1rem 0;
+        color: #ffffff;
+    }
+`
 
 const Movie = styled.div`
-  padding-bottom: 10rem;
+    padding-bottom: 10rem;
 
-  .line {
-    height: 0.5rem;
-    background: #cccccc;
-    margin-bottom: 3rem;
-  }
+    .line {
+        height: 0.5rem;
+        background: #cccccc;
+        margin-bottom: 3rem;
+    }
 
-  img {
-    width: 100%;
-    height: 70vh;
-    object-fit: cover;
-  }
-`;
+    img {
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+    }
+`
 
 export default OurWork;

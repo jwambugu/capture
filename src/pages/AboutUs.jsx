@@ -3,13 +3,13 @@ import ServicesSection from "../components/ServicesSection";
 import FaqSection from "../components/FaqSection";
 
 function AboutUs() {
-    return (
-        <>
-            <AboutSection />
-            <ServicesSection />
-            <FaqSection />
-        </>
-    );
+  return (
+    <>
+      <AboutSection />
+      <ServicesSection />
+      <FaqSection />
+    </>
+  );
 }
 
 export default AboutUs;

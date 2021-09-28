@@ -8,6 +8,7 @@ export const About = styled.div`
   padding: 5rem 10rem;
   color: #ffffff;
 `;
+
 export const Description = styled.div`
   flex: 1;
   padding-right: 5rem;
@@ -16,6 +17,7 @@ export const Description = styled.div`
     font-weight: lighter;
   }
 `;
+
 export const Image = styled.div`
   flex: 1;
   overflow: hidden;

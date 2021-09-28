@@ -1,46 +1,46 @@
 // Images
-import athlete from "../assets/images/athlete-small.png"
-import theRacer from "../assets/images/theracer-small.png"
-import goodTimes from "../assets/images/goodtimes-small.png"
+import athlete from "../assets/images/athlete-small.png";
+import theRacer from "../assets/images/theracer-small.png";
+import goodTimes from "../assets/images/goodtimes-small.png";
 
-import styled from "styled-components"
-import {Link} from "react-router-dom"
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const OurWork = () => {
-	return (
-		<Work>
-			<Movie>
-				<h2>The Athlete</h2>
+  return (
+    <Work>
+      <Movie>
+        <h2>The Athlete</h2>
 
-				<div className="line"/>
+        <div className="line" />
 
-				<Link>
-					<img src={athlete} alt="The athlete"/>
-				</Link>
-			</Movie>
+        <Link>
+          <img src={athlete} alt="The athlete" />
+        </Link>
+      </Movie>
 
-			<Movie>
-				<h2>The Racer</h2>
+      <Movie>
+        <h2>The Racer</h2>
 
-				<div className="line"/>
+        <div className="line" />
 
-				<Link>
-					<img src={theRacer} alt="The racer"/>
-				</Link>
-			</Movie>
+        <Link>
+          <img src={theRacer} alt="The racer" />
+        </Link>
+      </Movie>
 
-			<Movie>
-				<h2>The Racer</h2>
+      <Movie>
+        <h2>The Racer</h2>
 
-				<div className="line"/>
+        <div className="line" />
 
-				<Link>
-					<img src={goodTimes} alt="Good times"/>
-				</Link>
-			</Movie>
-		</Work>
-	)
-}
+        <Link>
+          <img src={goodTimes} alt="Good times" />
+        </Link>
+      </Movie>
+    </Work>
+  );
+};
 
 const Work = styled.div`
   min-height: 100vh;
@@ -51,7 +51,7 @@ const Work = styled.div`
     padding: 1rem 0;
     color: #ffffff;
   }
-`
+`;
 
 const Movie = styled.div`
   padding-bottom: 10rem;
@@ -67,6 +67,6 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
-`
+`;
 
 export default OurWork;

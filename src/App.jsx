@@ -1,35 +1,35 @@
 // Global styles
-import GlobalStyles from "./components/GlobalStyles"
+import GlobalStyles from "./components/GlobalStyles";
 
 // Import pages
-import AboutUs from "./pages/AboutUs"
-import Navbar from "./components/Navbar"
-import OurWork from "./pages/OurWork"
-import ContactUs from "./pages/ContactUs"
+import AboutUs from "./pages/AboutUs";
+import Navbar from "./components/Navbar";
+import OurWork from "./pages/OurWork";
+import ContactUs from "./pages/ContactUs";
 
-import {Route, Switch} from "react-router-dom"
+import { Route, Switch } from "react-router-dom";
 
 function App() {
-	return (
-		<div className="App">
-			<GlobalStyles/>
+  return (
+    <div className="App">
+      <GlobalStyles />
 
-			<Navbar/>
+      <Navbar />
 
-			<Switch>
-				<Route exact path="/">
-					<AboutUs/>
-				</Route>
+      <Switch>
+        <Route exact path="/">
+          <AboutUs />
+        </Route>
 
-				<Route path="/our-work">
-					<OurWork/>
-				</Route>
-				<Route path="/contact-us">
-					<ContactUs/>
-				</Route>
-			</Switch>
-		</div>
-	)
+        <Route path="/our-work">
+          <OurWork />
+        </Route>
+        <Route path="/contact-us">
+          <ContactUs />
+        </Route>
+      </Switch>
+    </div>
+  );
 }
 
 export default App;

@@ -7,10 +7,14 @@ import homeTwo from "../assets/images/home-two.png";
 // Styled Components
 import styled from "styled-components";
 import { About, Description, Image } from "../styles";
+import { useScroll } from "./useScroll";
+import { fade } from "../animations";
 
 function ServicesSection() {
+  const [element, controls] = useScroll();
+
   return (
-    <Services>
+    <Services variants={fade} animate={controls} initial="hidden" ref={element}>
       <Description>
         <h2>
           High <span>quality</span> services.
@@ -64,13 +68,16 @@ const Services = styled(About)`
 
   p {
     width: 70%;
-    padding: 2rem 0rem 4rem 0rem;
+    padding: 2rem 0 4rem 0;
+    font-size: 1.1rem;
   }
 `;
+
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
 const Card = styled.div`
   flex-basis: 15rem;
 

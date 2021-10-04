@@ -8,13 +8,18 @@ import homeTwo from "../assets/images/home-two.png";
 import styled from "styled-components";
 import { About, Description, Image } from "../styles";
 import { useScroll } from "./useScroll";
-import { fade } from "../animations";
+import { scrollReveal } from "../animations";
 
 function ServicesSection() {
   const [element, controls] = useScroll();
 
   return (
-    <Services variants={fade} animate={controls} initial="hidden" ref={element}>
+    <Services
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}
+    >
       <Description>
         <h2>
           High <span>quality</span> services.

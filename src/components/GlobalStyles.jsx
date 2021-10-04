@@ -8,14 +8,22 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box
   }
 
+  html {
+    @media (max-width: 1700px) {
+      font-size: 75%;
+    }
+
+  }
+
   body {
     background: #1b1b1b;
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
   }
 
   button {
     font-weight: bold;
-    font-size: 1.1 .rem;
+    font-size: 1.1rem;
     cursor: pointer;
     padding: 1rem 2rem;
     border: 3px solid #23d997;

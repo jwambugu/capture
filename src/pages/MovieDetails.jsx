@@ -7,6 +7,7 @@ import styled from "styled-components";
 // Animations
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animations";
+import ScrollTop from "../components/ScrollTop";
 
 const MovieDetails = () => {
   const { location } = useHistory();
@@ -46,6 +47,8 @@ const MovieDetails = () => {
           </ImageDisplay>
         </Details>
       )}
+
+      <ScrollTop />
     </>
   );
 };
@@ -79,6 +82,11 @@ const Awards = styled.div`
   margin: 5rem 10rem;
   align-items: center;
   justify-content: space-around;
+
+  @media (max-width: 1500px) {
+    display: block;
+    margin: 2rem 2rem;
+  }
 `;
 
 const AwardStyle = styled.div`

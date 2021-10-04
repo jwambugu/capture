@@ -18,6 +18,7 @@ import {
 } from "../animations";
 
 import { useScroll } from "../components/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
   const [element, controls] = useScroll();
@@ -73,6 +74,8 @@ const OurWork = () => {
         </Link>
       </Movie>
 
+      <ScrollTop />
+
       {/*{movies &&*/}
       {/*  movies.map((movie) => (*/}
       {/*    <Movie key={movie.url}>*/}
@@ -102,6 +105,10 @@ const Work = styled(motion.div)`
 
   h2 {
     padding: 1rem 0;
+  }
+
+  @media (max-width: 1300px) {
+    padding: 2rem 2rem;
   }
 `;
 
